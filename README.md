@@ -1,16 +1,34 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/ficha-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/ficha-light.svg">
-  <img src="assets/ficha-light.svg" width="100%" alt="Ficha técnica de Nicolás Pérez Martín. Plato: Skanda, escandallos y márgenes reales para catering. Origen: de camarero en caterings a cofundador y desarrollador. Busca: primer puesto junior en IT o en investigación en IA aplicada. Sello: finalista del Santander X Award 2026.">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
+  <img src="assets/hero-light.svg" width="100%" alt="Nicolás Pérez Martín. Hago software para oficios que no se hacen sentado. Finalista del Santander X Award 2026. En carta: Skanda, Relincho, plataforma scout y Vision Transformers. Origen: de camarero en caterings a cofundador y desarrollador. Busca su primer puesto junior en IT o en investigación en IA aplicada. Con TypeScript, Next.js, PostgreSQL, Python, Java y Laravel.">
 </picture>
 
+<p align="center">
+  <b><a href="https://skanda-software.com">Skanda</a></b> &nbsp;·&nbsp;
+  <a href="https://relincho.vercel.app">Relincho (demo)</a> &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/nicol%C3%A1s-p%C3%A9rez-mart%C3%ADn-5773b0355/">LinkedIn</a>
+</p>
+
 **TL;DR** · Software engineering student (University of Seville, 2027) and co-founder of Skanda, a B2B SaaS for catering cost control, Santander X Award 2026 finalist. Looking for a first junior role in software or applied-AI research.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/stack-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/stack-light.svg">
+  <img src="assets/stack-light.svg" width="100%" alt="Ingredientes, mi stack por uso. Producto web: TypeScript, Next.js, React, Tailwind, shadcn/ui, tRPC y Vue 3 con Inertia. Backend y datos: PostgreSQL, Prisma, Supabase con RLS, Node.js, Laravel, PHP, Java y Spring Boot. IA: Gemini API, Python, PyTorch, Hugging Face, Claude Code, MCP y agentes. Infra y calidad: Git, Vercel, Stripe, Cloudflare R2, Docker, GitHub Actions, Pest, JUnit y Scrum. Lo que más código tiene en mis repos públicos: TypeScript, Java, PHP, Vue, JavaScript y Python.">
+</picture>
 
 ### Ahora mismo
 
 Fui camarero en caterings, vi el problema desde dentro y monté **[Skanda](https://skanda-software.com)**. Estudio Ingeniería del Software en la Universidad de Sevilla (hasta 2027) y hago el TFG sobre seguridad en MCP. Busco mi primer puesto junior en IT o en un equipo de investigación en IA aplicada.
 
 ### Elaboración
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/flow-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/flow-light.svg">
+  <img src="assets/flow-light.svg" width="100%" alt="Cómo funciona Skanda: la factura del proveedor entra, una IA (Gemini) extrae los datos, se calcula el escandallo con ingredientes, cantidades y coste, y sale el margen real en tiempo real.">
+</picture>
 
 1. **[Skanda](https://skanda-software.com)**: costes y eventos para catering. Escandallos y márgenes reales en tiempo real; una IA extrae los datos de las facturas de proveedores. Finalista del Santander X Award 2026. Código privado.<br>
    <sub>Next.js 16 · React 19 · TypeScript · Tailwind 4 + shadcn/ui · Clerk · Prisma · PostgreSQL (Supabase) · Stripe · Gemini</sub>
@@ -35,19 +53,6 @@ Fui camarero en caterings, vi el problema desde dentro y monté **[Skanda](https
 
 </details>
 
-### Ingredientes
-
-| Para | Ingredientes | Cantidad |
-| :-- | :-- | :-- |
-| Producto web | TypeScript · Next.js · React · Tailwind · shadcn/ui · tRPC | **Base** de Skanda y Relincho |
-| Backend y datos | PostgreSQL · Prisma · Supabase (RLS) · Node.js | **Base** de Skanda y Relincho |
-| | Laravel · PHP, con Vue 3 + Inertia | La plataforma scout |
-| | Java · Spring Boot | Dos proyectos de carrera |
-| IA | Claude Code · MCP · agentes | **Base** de cerebro y del TFG |
-| | Gemini API · Python · PyTorch · Hugging Face | Skanda (facturas) y el estudio ViT |
-| Infra y calidad | Git · Docker · Vercel · GitHub Actions · Stripe · Cloudflare R2 | Despliegue, cobros y ficheros |
-| | Pest · JUnit + Mockito · Scrum | Tests y trabajo en equipo |
-
 ### Coste y margen
 
 | Coste | Margen |
@@ -57,19 +62,13 @@ Fui camarero en caterings, vi el problema desde dentro y monté **[Skanda](https
 | Sala en caterings: Alda y Terry, Terralda, González Byas | MF0950 Construcción de Páginas Web · 60&nbsp;h · abril de 2025 |
 | Español nativo · francés básico | Inglés B2, Cambridge English |
 
-<!-- PASE:START -->
-<details>
-<summary><b>En el pase</b> · último plato: relincho, 01 oct</summary>
-
-<sub>Mis últimos commits en repos públicos. Una Action lo actualiza cada día.</sub>
-
-- `01 oct` **relincho** · [feat: añadir Vercel Analytics en el layout raíz](https://github.com/nicopm0905/relincho/commit/517f31c370c584f48ea299c2fc1c20af18f1ad50)
-- `01 oct` **relincho** · [feat: importación CSV/Excel y exportación de caballos, acciones rápidas…](https://github.com/nicopm0905/relincho/commit/f17398491ea6ba55ab34810471fe7d5fd708d5aa)
-- `07 sep` **scouts** · [Plan de rama y salidas en el formato oficial MSC](https://github.com/nicopm0905/scouts/commit/c1c3fd528b40d43bd74555a4110252a93b8d960c)
-- `07 sep` **scouts** · [Memoria del curso, censo MSC, presupuesto vs real, retención y 'Tu sema…](https://github.com/nicopm0905/scouts/commit/d930abd4dfd95816a19bd49eef867f2a05af0697)
-
-</details>
-<!-- PASE:END -->
+<a href="https://github.com/nicopm0905?tab=repositories">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/pase-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/pase-light.svg">
+  <img src="assets/pase-light.svg" width="100%" alt="En el pase: mis últimos commits en repos públicos, actualizados a diario por una GitHub Action.">
+</picture>
+</a>
 
 ---
 

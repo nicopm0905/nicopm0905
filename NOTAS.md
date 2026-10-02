@@ -8,25 +8,17 @@
 4. **Ingredientes.** El stack agrupado por uso. La «cantidad» no es un porcentaje: dice en qué proyectos se usa de verdad. Base = sostiene Skanda y Relincho.
 5. **Coste y margen.** Coste = lo invertido (carrera, conservatorio, sala de catering). Margen = lo que ha salido (premio, certificados). **En el pase** va plegado al final y su resumen se actualiza solo.
 
-## Decisiones de diseño
+## Decisiones de diseño (v2, animada)
 
-- **Concepto aplicado al ~70 %.** Los términos de cocina están solo en títulos y etiquetas (Elaboración, Ingredientes, Coste y margen, Fuera de carta, En el pase). El contenido es normal y se entiende sin conocer la metáfora.
-- **Fuentes incrustadas.** GitHub sirve los SVG como `<img>` y no carga fuentes externas. Por eso DM Serif Display y DM Sans (OFL) van incrustadas en base64 y recortadas a los glifos usados (~24 KB por SVG). Se regeneran con `python tools/build_ficha.py` (requiere `pip install fonttools brotli`; las fuentes se descargan de google/fonts a `tools/.fonts/`, ignorada en git).
-- **Colores de Skanda.** Verde `oklch(0.348 0.054 163)` en claro y `oklch(0.78 0.11 163)` en oscuro, convertidos a hex. El fondo es el papel de su tema.
-- **Claro/oscuro.** `<picture>` con `prefers-color-scheme`. En github.com lo resuelve su elemento `themed-picture` según el tema elegido. Revisado en local en ambos temas, a 800 px y a 375 px. En móvil, el texto pequeño de la ficha se lee justo, pero todo está repetido en el markdown de debajo.
-- **«Nº 0905»** de la cabecera sale del usuario `nicopm0905`. Es un guiño, no un dato.
-- **Lema** «Hago software para oficios que no se hacen sentado.» Es retórico, no un dato: vale para catering, yeguadas y scouts. Cámbialo si no te convence.
-- **Medidas.** ~2.070 px de alto a 800 px de ancho, unas 2,3 pantallas de 900 px. Si quieres llegar a 2 justas, plega «Coste y margen» o «Ingredientes».
-- **Sin** stats cards, contador, typing SVG, muro de badges ni serpiente. Lo he comprobado con grep.
-
-## «En el pase» (Action)
-
-- `scripts/update_pase.py` (solo stdlib) lee tus repos públicos que no son forks. Toma hasta 2 commits tuyos por repo, sin merges, y escribe los 4 últimos entre `<!-- PASE:START -->` y `<!-- PASE:END -->`. El resumen del `<details>` muestra el último plato.
-- `.github/workflows/update-readme.yml` corre a diario a las 06:17 UTC y también a mano (`workflow_dispatch`). Solo usa el `GITHUB_TOKEN` por defecto con `contents: write` y solo hace commit si cambia algo.
-- Los mensajes de commit se escapan (markdown y `<>`) y se cortan a 72 caracteres. Si la API falla, el script sale con error y no toca el README.
-- Ojo: **tus mensajes de commit públicos salen en el perfil**. Ahora mismo aparecen 2 de relincho y 2 de scouts.
-- GitHub desactiva los cron de un repo público tras 60 días sin actividad. Si deja de actualizarse, reactívalo en la pestaña Actions.
-- Probado en local con y sin token. Es idempotente: la segunda ejecución da «Sin cambios».
+- **Todo el diseño es SVG propio y animado.** GitHub ejecuta CSS y SMIL dentro de un `<img>`, pero no scripts ni fuentes externas. Generados con `python tools/build_assets.py` (`pip install fonttools brotli`): `hero`, `stack` y `flow`, cada uno en claro y oscuro, con DM Serif Display y DM Sans (OFL) incrustadas en base64.
+- **hero:** la ficha con el sello que «cae» al cargar, un punto que late en «Buscando primer puesto» y una fila «EN CARTA» que rota cada 4 s entre Skanda, Relincho, plataforma scout y ViT. Incluye una fila CON con el stack principal.
+- **stack:** chips por uso. Relleno = lo uso en Skanda y Relincho; borde = otros proyectos. Debajo, barras con los bytes de código por lenguaje en tus repos públicos (datos de la API de GitHub en el momento de generar). Skanda es privado y no cuenta; está dicho en el propio SVG. Para refrescar las barras, vuelve a ejecutar `build_assets.py` y haz commit.
+- **flow:** «Skanda, por dentro»: factura, IA (Gemini), escandallo y margen real, con un punto que recorre el flujo e ilumina cada paso. Solo dice lo que dicen tus datos, sin cifras.
+- **pase:** una comanda monoespaciada con tus últimos commits que genera la Action (`scripts/update_pase.py`, solo stdlib). Ya no toca el README: solo regenera `assets/pase-*.svg` y hace commit si hay commits nuevos.
+- `prefers-reduced-motion` desactiva las animaciones CSS (el punto del flujo, que usa SMIL, no se desactiva).
+- **Sin** stats cards, contador, typing SVG, muro de badges ni serpiente.
+- Los SVG no tienen enlaces clicables, por eso hay una fila de enlaces bajo la cabecera y los enlaces de cada proyecto siguen en texto.
+- Pesan ~55-70 KB cada uno (las fuentes son casi todo).
 
 ## Datos que faltan o no pude verificar
 
@@ -44,7 +36,7 @@
 ```bash
 cd C:/PROYECTOS/github-profile-readme
 git init -b main
-git add README.md NOTAS.md .gitignore assets scripts tools/build_ficha.py tools/ficha.svg.tpl tools/preview.sh .github
+git add README.md NOTAS.md .gitignore assets scripts tools/build_assets.py tools/preview.sh .github
 gh repo create nicopm0905/nicopm0905 --public --source . --push
 ```
 
