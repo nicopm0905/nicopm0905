@@ -1,0 +1,4 @@
+tools/.fonts/
+tools/.render-*.html
+tools/.render-body.html
+__pycache__/
